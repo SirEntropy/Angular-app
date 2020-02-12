@@ -1,0 +1,9 @@
+h3{
+  color: deepskyblue;
+}
+
+.row.time-container{
+  display: flex;
+  justify-content: center;
+
+}

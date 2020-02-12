@@ -1,0 +1,24 @@
+
+  <div class="content-container">
+  <div class="row time-location">
+
+      London Clock
+
+  </div>
+  <div class="row time-display">
+
+      <div class="time">
+        <input type="number" [hidden]="!heditmode" (keydown.enter)=onKeydown($event) class="cellInput" autofocus>
+        <span class="hour" *ngIf="!heditmode" (click)="heditmode = true; stopClock()">{{currentTime| date: 'hh':'UTC+0'}}</span>:
+        <input type="number" [hidden]="!meditmode" (keydown.enter)=onKeydown($event) class="cellInput" autofocus>
+        <span class="minute" *ngIf="!meditmode" (click)="meditmode = true; stopClock()">{{currentTime| date: 'mm':'UTC+0'}}</span>:
+        <input type="number" [hidden]="!seditmode" (keydown.enter)=onKeydown($event) class="cellInput" autofocus>
+        <span class="seconds" style="padding-right: 5px;" *ngIf="!seditmode" (click)="seditmode = true; stopClock()">{{currentTime| date: 'ss':'UTC+0'}}</span>
+        <span>{{currentTime| date: 'a':'UTC+0'}}</span>
+      </div>
+
+
+
+  </div>
+  </div>
+

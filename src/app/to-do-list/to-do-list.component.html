@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h1>Item</h1>
+    </div>
+ <app-to-do-item (itemAdded)="onItemAdded($event)"></app-to-do-item>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <input type="text" class="form-control" #toSearch>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary" (click)="onSearch()">Search</button>
+    </div>
+    <hr>
+    <hr>
+    <div class="row"
+    *appSearch="!found">
+      <h3>{{result}}</h3>
+    </div>
+  </div>
+  <hr>
+  <hr>
+  <div class="row">
+    <table class="table-bordered">
+      <tr *ngFor="let item of items" (click)="onRemoveItem(item)">
+        <td>
+          <h3>{{item}}</h3>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+</div>
